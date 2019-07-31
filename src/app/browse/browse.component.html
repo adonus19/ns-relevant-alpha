@@ -1,0 +1,27 @@
+<ActionBar class="action-bar">
+    <Label class="action-bar-title" text="Events"></Label>
+</ActionBar>
+
+<!-- <StackLayout backgroundColor="#e6e6e6">
+    <ScrollView orientation="horizontal">
+        <ListView [items]="currentEvents" (itemTap)="getEventDetail($event)" class="list-group">
+                <StackLayout orientation="horizontal" margin="10" height="200" width="200"
+                    [backgroundImage]="event.imageUrl" borderRadius="7">
+                    <FlexboxLayout class="event-brief">
+                        <Label text="event.title"></Label>
+                    </FlexboxLayout>
+                </StackLayout>
+        </ListView>
+    </ScrollView>
+</StackLayout> -->
+
+<StackLayout backgroundColor="#e6e6e6">
+    <ScrollView orientation="horizontal">
+        <StackLayout orientation="horizontal" margin="10" height="200" width="200" [backgroundImage]="event.imageUrl"
+            borderRadius="7" *ngFor="let event of currentEvents; let i = index">
+            <FlexboxLayout class="event-brief">
+                <Label text="event.title"></Label>
+            </FlexboxLayout>
+        </StackLayout>
+    </ScrollView>
+</StackLayout>
